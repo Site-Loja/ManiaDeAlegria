@@ -26,9 +26,20 @@
         @keyframes slideOut { to { transform: translateX(400px); opacity: 0; } }
         .animate-slide-out { animation: slideOut 0.3s ease-out forwards; }
         .dragover { background-color: #fce7f3 !important; border-color: #ec4899 !important; }
+        
+        /* ===================================================
+           CONTROLE DE TAMANHO DAS FOTOS DO CATÁLOGO
+           ===================================================
+           Altere os valores de 'height' abaixo para aumentar 
+           ou diminuir a área de exibição das imagens.
+           Valores atuais (AUMENTADOS NOVAMENTE):
+           - Mobile: 340px (antes 280px)
+           - Tablet: 380px (antes 300px)
+           - Desktop: 440px (antes 320px)
+        =================================================== */
         .product-image-container {
             width: 100%;
-            height: 220px;
+            height: 340px;          /* altura da foto no celular */
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -45,8 +56,18 @@
             padding: 6px;
             display: block;
         }
-        @media (min-width: 768px) { .product-image-container { height: 240px; } }
-        @media (min-width: 1200px) { .product-image-container { height: 260px; } }
+        /* Ajuste para tablets (largura mínima 768px) */
+        @media (min-width: 768px) { 
+            .product-image-container { 
+                height: 380px;       /* altura da foto em tablets */
+            } 
+        }
+        /* Ajuste para desktops (largura mínima 1200px) */
+        @media (min-width: 1200px) { 
+            .product-image-container { 
+                height: 440px;       /* altura da foto em desktops grandes */
+            } 
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 text-gray-800">
@@ -119,8 +140,8 @@
                 <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 border-2 border-pink-200"
                      data-product-id="p1"
                      data-collection="Shorts"
-                     data-name="Shorts Jeans"
-                     data-description="Camiseta 100% algodão, confortável e colorida para crianças."
+                     data-name="Shorts"
+                     data-description="Shorts, confortável e colorida para crianças."
                      data-price="79.90"
                      data-quantity="1"
                      data-image="Shorts-RV.png">
@@ -145,12 +166,12 @@
                 <!-- Produto 2 -->
                 <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 border-2 border-pink-200"
                      data-product-id="p2"
-                     data-collection="Conjunto"
-                     data-name="Conjunto Infantil "
+                     data-collection="conjunto"
+                     data-name="Conjunto Infatil"
                      data-description="Calça macia para brincar o dia todo."
                      data-price="133.90"
                      data-quantity="1"
-                     data-image="images/calca1.jpg">
+                     data-image="conjunt.png">
                     <div class="relative bg-gray-200 overflow-hidden product-image-container">
                         <img src="conjunt.png" alt="Calça Confort" class="product-image" loading="lazy">
                         <div class="stock-badge absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">1 em estoque</div>
@@ -174,13 +195,13 @@
                      data-product-id="p3"
                      data-collection="conjunto"
                      data-name="Conjunto Countrey"
-                     data-description="Conjunto e colorido para ocasiões especiais."
+                     data-description="Conjunto Countrey para ocasiões especiais."
                      data-price="189.90"
                      data-quantity="3"
-                     data-image="images/vestido1.jpg">
+                     data-image="Countre.png">
                     <div class="relative bg-gray-200 overflow-hidden product-image-container">
                         <img src="Countre.png" alt="Vestido Festa" class="product-image" loading="lazy">
-                        <div class="stock-badge absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">3 em estoque</div>
+                        <div class="stock-badge absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">1 em estoque</div>
                     </div>
                     <div class="p-3">
                         <h3 class="product-name text-base font-bold text-gray-900 mb-1 truncate">Conjunto Countrey</h3>
@@ -198,13 +219,13 @@
                 </div>
                 <!-- Produto 4 -->
                 <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 border-2 border-pink-200"
-                     data-product-id="p3"
+                     data-product-id="p4"
                      data-collection="Conjunto"
                      data-name="Conjunto Corine"
-                     data-description="Conjunto Corine  colorido para ocasiões especiais."
+                     data-description="Conjunto Corine e colorido para ocasiões especiais."
                      data-price="113.90"
-                     data-quantity="2"
-                     data-image="images/vestido1.jpg">
+                     data-quantity="3"
+                     data-image="conjuto-RV.png">
                     <div class="relative bg-gray-200 overflow-hidden product-image-container">
                         <img src="conjuto-RV.png" alt="Conjunto" class="product-image" loading="lazy">
                         <div class="stock-badge absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">3 em estoque</div>
@@ -217,41 +238,148 @@
                             <span class="product-collection text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded font-semibold">Conjunto</span>
                         </div>
                         <button class="buy-now-btn w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold py-2 rounded-lg transition transform hover:scale-105"
-                                data-product-id="p3">
+                                data-product-id="p4">
                             📱 Comprar pelo WhatsApp
                         </button>
                         
                     </div>
                 </div>
-                <!-- Produto 3 -->
+                <!-- Produto 5 -->
                 <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 border-2 border-pink-200"
-                     data-product-id="p3"
+                     data-product-id="p5"
                      data-collection="Short"
-                     data-name="Shorts"
+                     data-name="Short Infantil "
                      data-description="Shorts e colorido para ocasiões especiais."
                      data-price="85.90"
                      data-quantity="5"
-                     data-image="images/vestido1.jpg">
+                     data-image="Bermuda Jeans.png">
                     <div class="relative bg-gray-200 overflow-hidden product-image-container">
-                        <img src="Bermuda Jeans.png" alt="Vestido Festa" class="product-image" loading="lazy">
+                        <img src="Bermuda Jeans.png" alt="Shorts " class="product-image" loading="lazy">
                         <div class="stock-badge absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">1 em estoque</div>
                     </div>
                     <div class="p-3">
-                        <h3 class="product-name text-base font-bold text-gray-900 mb-1 truncate">Short Jeans </h3>
-                        <p class="product-desc text-gray-600 text-xs mb-3 line-clamp-2">Short jeans masculino casual com lavagem moderna, modelagem confortável e acabamento de alta qualidade. Ideal para o dia a dia, combina estilo e praticidade em qualquer ocasião. Possui bolsos funcionais, fechamento.</p>
+                        <h3 class="product-name text-base font-bold text-gray-900 mb-1 truncate">Short Masculino  </h3>
+                        <p class="product-desc text-gray-600 text-xs mb-3 line-clamp-2">Short masculino casual com lavagem moderna, modelagem confortável e acabamento de alta qualidade. Ideal para o dia a dia, combina estilo e praticidade em qualquer ocasião. Possui bolsos funcionais, fechamento.</p>
                         <div class="flex justify-between items-center mb-3">
                             <span class="product-price text-lg font-bold text-pink-600">R$ 85.90 </span>
-                            <span class="product-collection text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded font-semibold">Short Jeans</span>
+                            <span class="product-collection text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded font-semibold">Short</span>
                         </div>
                         <button class="buy-now-btn w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold py-2 rounded-lg transition transform hover:scale-105"
-                                data-product-id="p3">
+                                data-product-id="p5">
                             📱 Comprar pelo WhatsApp
                         </button>
                         
                     </div>
                 </div>
-
-
+                
+                <!-- Produto 6 -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 border-2 border-pink-200"
+                     data-product-id="p6"
+                     data-collection="Camisetas"
+                     data-name="Camisa Masculina T1"
+                     data-description="Camisa Branca para ocasiões especiais."
+                     data-price="39.90"
+                     data-quantity="1"
+                     data-image="CAT1.png">
+                    <div class="relative bg-gray-200 overflow-hidden product-image-container">
+                        <img src="CAT1.png" alt="Camisa Masculina " class="product-image" loading="lazy">
+                        <div class="stock-badge absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">1 em estoque</div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="product-name text-base font-bold text-gray-900 mb-1 truncate">Camisa Masculina</h3>
+                        <p class="product-desc text-gray-600 text-xs mb-3 line-clamp-2">Camisa Masculina Gola Careca T1 </p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="product-price text-lg font-bold text-pink-600">R$ 39.90 </span>
+                            <span class="product-collection text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded font-semibold">Camisa</span>
+                        </div>
+                        <button class="buy-now-btn w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold py-2 rounded-lg transition transform hover:scale-105"
+                                data-product-id="p6">
+                            📱 Comprar pelo WhatsApp
+                        </button>
+                        
+                    </div>
+                </div>
+                <!-- Produto 7 -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 border-2 border-pink-200"
+                     data-product-id="p7"
+                     data-collection="Camisetas"
+                     data-name="Camisa Masculina T2"
+                     data-description="Camisa para ocasiões especiais."
+                     data-price="38.90"
+                     data-quantity="1"
+                     data-image="CAT2.png">
+                    <div class="relative bg-gray-200 overflow-hidden product-image-container">
+                        <img src="CAT2.png" alt="Camisa Masculina " class="product-image" loading="lazy">
+                        <div class="stock-badge absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">1 em estoque</div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="product-name text-base font-bold text-gray-900 mb-1 truncate">Camisa Masculina</h3>
+                        <p class="product-desc text-gray-600 text-xs mb-3 line-clamp-2">Camisa Masculina casual T2 </p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="product-price text-lg font-bold text-pink-600">R$ 38.90 </span>
+                            <span class="product-collection text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded font-semibold">Camisa</span>
+                        </div>
+                        <button class="buy-now-btn w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold py-2 rounded-lg transition transform hover:scale-105"
+                                data-product-id="p7">
+                            📱 Comprar pelo WhatsApp
+                        </button>
+                        
+                    </div>
+                </div>
+                <!-- Produto 8 -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 border-2 border-pink-200"
+                     data-product-id="p8"
+                     data-collection="Camisetas"
+                     data-name="Camisa Masculina T2"
+                     data-description="Camisa para ocasiões especiais."
+                     data-price="39.90"
+                     data-quantity="1"
+                     data-image="CA2T.png">
+                    <div class="relative bg-gray-200 overflow-hidden product-image-container">
+                        <img src="CA2T.png" alt="Camisa Masculina " class="product-image" loading="lazy">
+                        <div class="stock-badge absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">1 em estoque</div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="product-name text-base font-bold text-gray-900 mb-1 truncate">Camisa Masculina</h3>
+                        <p class="product-desc text-gray-600 text-xs mb-3 line-clamp-2">Camisa Masculina T2 </p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="product-price text-lg font-bold text-pink-600">R$ 38.90 </span>
+                            <span class="product-collection text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded font-semibold">Camisa</span>
+                        </div>
+                        <button class="buy-now-btn w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold py-2 rounded-lg transition transform hover:scale-105"
+                                data-product-id="p8">
+                            📱 Comprar pelo WhatsApp
+                        </button>
+                        
+                    </div>
+                </div>
+                <!-- Produto 9 -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 border-2 border-pink-200"
+                     data-product-id="p9"
+                     data-collection="Camisetas"
+                     data-name="Camisa Masculina T4 "
+                     data-description="Camisa para ocasiões especiais."
+                     data-price="45.90"
+                     data-quantity="2"
+                     data-image="CATT4.png">
+                    <div class="relative bg-gray-200 overflow-hidden product-image-container">
+                        <img src="CATT4.png" alt="Camisa Masculina " class="product-image" loading="lazy">
+                        <div class="stock-badge absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">2 em estoque</div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="product-name text-base font-bold text-gray-900 mb-1 truncate">Camisa Masculina</h3>
+                        <p class="product-desc text-gray-600 text-xs mb-3 line-clamp-2">Camisa Masculina Infantil T4, T10, T12 </p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="product-price text-lg font-bold text-pink-600">R$ 45.90 </span>
+                            <span class="product-collection text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded font-semibold">Camisa</span>
+                        </div>
+                        <button class="buy-now-btn w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold py-2 rounded-lg transition transform hover:scale-105"
+                                data-product-id="p9">
+                            📱 Comprar pelo WhatsApp
+                        </button>
+                        
+                    </div>
+                </div>
 
                 <!-- ⚡ PARA ADICIONAR MAIS PRODUTOS, COPIE UM BLOCO ACIMA E COLE AQUI ⚡ -->
 
