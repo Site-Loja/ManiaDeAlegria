@@ -23,7 +23,17 @@
     <style>
         @keyframes slideOut { to { transform: translateX(400px); opacity: 0; } }
         .animate-slide-out { animation: slideOut 0.3s ease-out forwards; }
-        
+
+        /* Animação de pulo para o logo (substitui o balão) */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-24px); }
+            60% { transform: translateY(-8px); }
+        }
+        .animate-bounce-logo {
+            animation: bounce 2.2s ease-in-out infinite;
+        }
+
         /* Controle de tamanho das fotos do catálogo (aumentado) */
         .product-image-container {
             width: 100%;
@@ -86,9 +96,9 @@
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-b from-amber-100 via-yellow-100 to-orange-100">
         <div class="max-w-4xl mx-auto text-center">
-            <!-- Substituído o emoji 🎈 por uma foto (logotipo da loja) -->
+            <!-- Logo pulando no lugar do balão -->
             <div class="mb-8 flex justify-center">
-                <img src="/balon.png" alt="Mania de Alegria" class="w-40 h-auto md:w-56 lg:w-64">
+                <img src="/balon.png" alt="Mania de Alegria" class="w-40 h-auto md:w-56 lg:w-64 animate-bounce-logo">
             </div>
             <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900">
                 <span style="color: #eab308;">Roupas Infantis com</span>
